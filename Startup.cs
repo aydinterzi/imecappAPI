@@ -1,7 +1,10 @@
+using imecappAPI.Data;
+using imecappAPI.PostData;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,16 +25,30 @@ namespace imecappAPI
         }
 
         public IConfiguration Configuration { get; }
-
+        readonly string MyAllowOrigins = "_myAllowOrigins";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DataContextConnectionString")));
             services.AddControllers();
+            services.AddCors(options => {
+                options.AddPolicy(
+                    name: MyAllowOrigins,
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+
+
+                    });
+            });
+        
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "imecappAPI", Version = "v1" });
             });
+            services.AddScoped<IPostData, SqlPostData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +64,7 @@ namespace imecappAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(MyAllowOrigins);
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
