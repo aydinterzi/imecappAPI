@@ -8,10 +8,10 @@ namespace imecappAPI.PostData
 {
     public interface IPostData
     {
-        Task<List<Post>> GetEmployees();
-        Task<Post> GetEmployee(int id);
-        Task<Post> AddEmployee(Post employee);
-        Task DeleteEmployee(Post employee);
-        Task<Post> EditEmployee(Post employee);
+        Task<List<Post>> GetPosts();
+        Task<Post> GetPost(int id);
+        Task<Post> AddPost(Post post);
+        Task DeletePost(Post post);
+        Task<Post> EditPost(Post post);
     }
 }

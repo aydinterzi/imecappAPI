@@ -16,27 +16,32 @@ namespace imecappAPI.PostData
         {
             _dataContext = dataContext;
         }
-        public Task<Post> AddEmployee(Post employee)
+
+        public async Task<Post> AddPost(Post post)
+        {
+             await _dataContext.Posts.AddAsync(post);
+            await _dataContext.SaveChangesAsync();
+            return post;
+        }
+
+        public Task DeletePost(Post post)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteEmployee(Post employee)
+      
+        public Task<Post> EditPost(Post post)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Post> EditEmployee(Post employee)
+
+        public Task<Post> GetPost(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Post> GetEmployee(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<Post>> GetEmployees()
+        public async Task<List<Post>> GetPosts()
         {
             return await _dataContext.Posts.ToListAsync();
         }
