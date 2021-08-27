@@ -41,7 +41,6 @@ C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Microsoft.Ide
 C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -64,3 +63,4 @@ C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Microsoft.Asp
 C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\lumpy\source\repos\imecappAPI\imecappAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
