@@ -29,7 +29,7 @@ namespace imecappAPI.Controllers
         public async Task<IActionResult> AddPost(Post post)
         {
             await _sqlPostData.AddPost(post);
-            return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + post.PostID, post); 
+            return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + post.Id, post); 
         }
 
     }
