@@ -21,9 +21,10 @@ namespace imecappAPI.Controllers
             _sqlPostData = sqlPostData;
         }
         [HttpGet]
-        public async Task<IActionResult> GetPosts()
+        public async Task<IActionResult> GetPosts([FromQuery]PostQueryParams postParams)
         {
-            return Ok(await _sqlPostData.GetPosts());
+            var posts = await _sqlPostData.GetPosts(postParams);
+            return Ok(posts);
         }
         [HttpPost]
         public async Task<IActionResult> AddPost(Post post)

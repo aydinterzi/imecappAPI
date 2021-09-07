@@ -41,9 +41,25 @@ namespace imecappAPI.PostData
             throw new NotImplementedException();
         }
 
-        public async Task<List<Post>> GetPosts()
+        public async Task<IEnumerable<Post>> GetPosts(PostQueryParams postParams)
         {
-            return await _dataContext.Posts.ToListAsync();
+            var posts = _dataContext.Posts
+                       .AsQueryable();
+            if(!string.IsNullOrEmpty(postParams.Category))
+            {
+                posts=posts.Where(i => i.Category == postParams.Category);
+            }
+
+            if (!string.IsNullOrEmpty(postParams.Language))
+            {
+                posts = posts.Where(i => i.Language == postParams.Language);
+            }
+
+            if (!string.IsNullOrEmpty(postParams.progLanguage))
+            {
+                posts = posts.Where(i => i.progLanguage == postParams.progLanguage);
+            }
+            return await posts.ToListAsync();
         }
     }
 }

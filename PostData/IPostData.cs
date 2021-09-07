@@ -8,7 +8,7 @@ namespace imecappAPI.PostData
 {
     public interface IPostData
     {
-        Task<List<Post>> GetPosts();
+        Task<IEnumerable<Post>> GetPosts(PostQueryParams postParams);
         Task<Post> GetPost(int id);
         Task<Post> AddPost(Post post);
         Task DeletePost(Post post);
