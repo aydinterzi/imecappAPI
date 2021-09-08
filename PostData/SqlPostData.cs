@@ -45,6 +45,7 @@ namespace imecappAPI.PostData
         {
             var posts = _dataContext.Posts
                        .AsQueryable();
+
             if(!string.IsNullOrEmpty(postParams.Category))
             {
                 posts=posts.Where(i => i.Category == postParams.Category);
