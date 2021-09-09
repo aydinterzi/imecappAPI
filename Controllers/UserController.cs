@@ -61,6 +61,8 @@ namespace imecappAPI.Controllers
             }
             return Unauthorized();
         }
+        
+
 
         private string GenerateJwtToken(User user)
         {

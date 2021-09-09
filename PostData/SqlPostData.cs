@@ -62,5 +62,18 @@ namespace imecappAPI.PostData
             }
             return await posts.ToListAsync();
         }
+        public async Task<User> GetUser(int id)
+        {
+            var user = await _dataContext.Users
+                                .FirstOrDefaultAsync(i => i.Id == id);
+            return user;
+        }
+        public async Task<Messages> AddMessage(Messages message)
+        {
+            await _dataContext.Messages.AddAsync(message);
+            await _dataContext.SaveChangesAsync();
+            return message;
+        }
+
     }
 }
