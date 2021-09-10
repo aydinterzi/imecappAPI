@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace imecappAPI.Controllers
 {
     [Authorize]
-    [Route("api/[controller]/{userId}")]
+    [Route("api/Posts/[controller]/{userId}")]
     [ApiController]
     public class MessagesController : ControllerBase
     {

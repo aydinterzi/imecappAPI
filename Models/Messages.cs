@@ -14,7 +14,7 @@ namespace imecappAPI.Models
         public int? RecipientId { get; set; }
         public User Recipient { get; set; }
         public string Text { get; set; }
-        public DateTime DateAdded { get; set; }
+        public DateTime DateAdded { get; set; } = DateTime.Now;
         public DateTime? DateRead { get; set; }
         public bool IsRead { get; set; }
         public bool SenderDeleted { get; set; }
